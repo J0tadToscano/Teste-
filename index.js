@@ -1,34 +1,78 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('form-cadastro');
-    const mensagem = document.getElementById('mensagem');
-    const formContainer = document.getElementById('form-container');
+document.addEventListener('DOMContentLoaded', function () {
+    
+  /
+// Selecionando o formulario e os campos
   
-    form.addEventListener('submit', function(event) {
-      event.preventDefault(); // Evitar o envio do formulario e recarregamento da pagina
+  con
+
+
+const form = document.getElementById('cadastro-form');
   
-      // Obter os valores dos campos
-      const nome = document.getElementById('nome').value;
-      const email = document.getElementById('email').value;
-      const telefone = document.getElementById('telefone').value;
+
+const nomeField = document.getElementById('nome');
   
-      // Verificar se algum campo esta vazio
-      if (!nome || !email || !telefone) {
-        alert('Todos os campos sao obrigatorios!');
-        return;
+
+const emailField = document.getElementById('email');
+  const formContainer = document.getElementById('form-container');
+  
+  
+const messageContainer = document.getElementById('message');
+
+  
+
+  /
+// Funcso para validar os campos
+  
+
+function validateForm() {
+      // Verifica se os campos estao vazios
+      if (nomeField.value.trim() === '' || emailField.value.trim() === '') {
+          
+      
+alert('Todos os campos devem ser preenchidos!');
+          
+          retur
+
+          
+
+    
+return false;
       }
+      
+      }
+
+
+      }
+
+    
+
+ 
+return true;
+  }
+
   
-      // Criar um objeto com os dados
-      const usuario = {
-        nome: nome,
-        email: email,
-        telefone: telefone
-      };
-  
-      // Exibir o objeto no console
-      console.log(usuario);
-  
-      // Ocultar o formulario e mostrar a mensagem de agradecimento
-      formContainer.style.display = 'none';
-      mensagem.style.display = 'block';
-    });
-  });
+  }
+
+// Evento de envio do formulario
+  form.addEventListener('submit', function (event) {
+      event.preventDefault(); // Impede o envio tradicional do formulario
+
+      
+
+ 
+// Valida os campos
+      
+
+if (validateForm()) {
+          // Cria o objeto com os valores dos campos
+          const formData = {
+              
+       
+nome: nomeField.value,
+              
+     
+email: emailField.value
+          };
+
+          // Exibe os dados no console
+          console.log(formData);
